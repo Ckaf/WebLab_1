@@ -2,7 +2,7 @@ html{
     background-color: antiquewhite;
 }
 
-#information {
+#body>#information {
     margin-top: 10%;
     margin-left: 10%;
 
@@ -45,4 +45,8 @@ td {
     font-size: larger;
     position: relative;
     text-align:  center;
+}
+
+.button:hover{
+    background-color: darksalmon;
 }
