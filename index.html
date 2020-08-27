@@ -20,11 +20,12 @@
         <div id="information" onsubmit="return false;">
             <form>
                 <p><b>Введите X:</b><br>
-                    <input id="inputX" type="text" name="TextField">
+                    <input id="inputX" type="text" placeholder="от -5 до 5" name="TextField">
                 <p><b>Введите Y:</b><br>
-                    <input id="inputY" type="text" name="TextField">
+                    <input id="inputY" type="text" placeholder="от -5 до 5" name="TextField">
                 <p><b>Введите R:</b><br>
-                    <input id="inputR" type="text" name="TextField" value=3 onchange=DrawFigure()>
+                    <input id="inputR" type="text" name="TextField" placeholder="от 1 до 4" value=3 onchange=DrawFigure()>
+
                     <input id="button" type="submit" name="Button" class="button" onclick={CheckInput()}>
             </form>
         </div>
