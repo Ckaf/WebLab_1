@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Europe/Moscow");
 //запускаем таймер
 $time = microtime(true);
 //получаем значения
@@ -22,5 +23,4 @@ if ($x<=$r && $x>=-$r/2){
     //определяем, попадает ли точка в прямоугольник
     if ($x>=0&&$x<=$r&&$y<=0&&$y>=-$r/2)$hit=true;
 }
-
-echo( $hit ? 'true' : 'false') . ','.(microtime(true)-$time).'sec';
+echo( $hit ? 'true' : 'false') . ','.(microtime(true)-$time).'sec'.','.date("H:i:s");
