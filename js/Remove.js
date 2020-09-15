@@ -12,4 +12,5 @@ for (let i=sessionStorage.length;i>=0;i--){
         thead.removeChild(thead.lastChild);
     }
 }
+Table()
 }
