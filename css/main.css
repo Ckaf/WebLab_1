@@ -14,7 +14,6 @@ html{
 #picture {
     margin-left: 10%;
     margin-top: 5%;
-
 }
 
 #table {
@@ -46,7 +45,9 @@ td {
     position: relative;
     text-align:  center;
 }
-
+.button{
+margin-top:5%;
+}
 .button:hover{
     background-color: darksalmon;
 }

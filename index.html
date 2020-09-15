@@ -11,21 +11,23 @@
     <script src="js/Draw.js"></script>
     <script src="js/Request.js"></script>
     <script src="js/Table.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-    </script>
+    <script src="js/Remove.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div id="header">
         <label>Новоселов Борис Сергеевич P3211 <br>2217 вариант</label>
     </div>
     <div id="body">
         <div id="information" onsubmit="return false;">
-            <form>
-                <p><b>Введите X:</b><br>
-                    <input id="inputX" type="text" placeholder="от -5 до 5" name="TextField" maxlength="6">
-                <p><b>Введите Y:</b><br>
-                    <input id="inputY" type="text" placeholder="от -5 до 5" name="TextField" maxlength="6">
-                <p><b>Введите R:</b><br>
-                    <input id="inputR" type="text" name="TextField" placeholder="от 1 до 4" value=3 maxlength="6" onchange=DrawFigure()>
-                    <input id="button" type="submit" name="Button" class="button" onclick={CheckInput()}>
+            <p><b>Введите X:</b><br></p>
+            <input id="inputX" type="text" placeholder="от -5 до 5" name="TextField" maxlength="6">
+            <p><b>Введите Y:</b><br></p>
+            <input id="inputY" type="text" placeholder="от -5 до 5" name="TextField" maxlength="6">
+            <p><b>Введите R:</b><br></p>
+            <input id="inputR" type="text" name="TextField" placeholder="от 1 до 4" value=3 maxlength="6"
+                   onchange=DrawFigure()>
+            <button id="send" type="submit" name="send" class="button" onclick={CheckInput()}>Отправить</button>
+            <button id="remove" type="submit" name="remove" class="button" onclick={RemoveSession()}>Удалить
+            </button>
             </form>
         </div>
         <div id="picture">
@@ -43,6 +45,10 @@
                 <tbody id="tbody"></tbody>
             </table>
         </div>
+        <script>
+            if (performance.navigation.type === 1) {
+                Table();
+            }</script>
     </div>
 </div>
 

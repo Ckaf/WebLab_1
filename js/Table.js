@@ -1,4 +1,4 @@
-function Table(DataArray) {
+function Table() {
 
     let tbody = document.getElementById("tbody");
     let thead = document.getElementById("thead");
@@ -12,15 +12,14 @@ function Table(DataArray) {
     }
     //делаем новую
     AddHeader("X", "Y", "R", "Результат", "Время работы скрипта", "Время");
-    for (let i = DataArray.length - 1; i >= 0; i--) {
-        let AnswerArray = [];
-        AnswerArray = DataArray[i].answer.split(',');
-        AddRow(DataArray[i].x, DataArray[i].y, DataArray[i].r, AnswerArray[0], AnswerArray[1],AnswerArray[2]);
+    for (let i = sessionStorage.length; i > 0; i--) {
+        let Data = sessionStorage.getItem((i-1).toString()).split(',');
+        AddRow(Data[0], Data[1], Data[2], Data[3], Data[4], Data[5]);
     }
 
 }
 
-function AddRow(x, y, r, res, time,time_now) {
+function AddRow(x, y, r, res, time, time_now) {
     let table = document.getElementById("tbody");
     let row = document.createElement("TR");
     table.appendChild(row);
@@ -29,7 +28,7 @@ function AddRow(x, y, r, res, time,time_now) {
     let td_r = document.createElement("TD");
     let td_res = document.createElement("TD");
     let td_time = document.createElement("TD");
-    let td_time_now= document.createElement("TD");
+    let td_time_now = document.createElement("TD");
     row.appendChild(td_x);
     row.appendChild(td_y);
     row.appendChild(td_r);
@@ -41,7 +40,7 @@ function AddRow(x, y, r, res, time,time_now) {
     td_r.innerHTML = r;
     td_res.innerHTML = res;
     td_time.innerHTML = time;
-    td_time_now.innerHTML=time_now;
+    td_time_now.innerHTML = time_now;
 }
 
 function AddHeader(x, y, r, res, time, time_now) {
@@ -51,7 +50,7 @@ function AddHeader(x, y, r, res, time, time_now) {
     let th_r = document.createElement("TH");
     let th_res = document.createElement("TH");
     let th_time = document.createElement("TH");
-    let th_time_now= document.createElement("TH");
+    let th_time_now = document.createElement("TH");
     thead.appendChild(th_x);
     thead.appendChild(th_y);
     thead.appendChild(th_r);
@@ -63,5 +62,5 @@ function AddHeader(x, y, r, res, time, time_now) {
     th_r.innerHTML = r;
     th_res.innerHTML = res;
     th_time.innerHTML = time;
-    th_time_now.innerHTML=time_now;
+    th_time_now.innerHTML = time_now;
 }
